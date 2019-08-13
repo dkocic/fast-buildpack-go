@@ -503,7 +503,7 @@ case "${TOOL}" in
     gomodules)
         ensureBZR "${BazaarVersion}"
         ensureHG "${MercurialVersion}"
-
+        echo "cd into ${build}"
         cd ${build}
         step "Determining packages to install"
         pkgs=${GO_INSTALL_PACKAGE_SPEC:-$(awk '{ if ($1 == "//" && $2 == "+heroku" && $3 == "install" ) { print substr($0, index($0,$4)); exit }}' ${goMOD})}
@@ -537,6 +537,8 @@ case "${TOOL}" in
         if [[ "${pkgs}" =~ "..." ]]; then
             mcount "package_spec.contains.dot_dot_dot"
         fi
+        
+        echo "detected packages ${pkgs}"
 
         warnPackageSpecOverride
         handleDefaultPkgSpec
