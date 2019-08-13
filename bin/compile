@@ -498,6 +498,7 @@ setupProcfile() {
     info "See https://devcenter.heroku.com/articles/procfile for more details about Procfiles"
     info ""
 }
+echo "${TOOL}"
 
 case "${TOOL}" in
     gomodules)
