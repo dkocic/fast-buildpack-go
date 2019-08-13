@@ -502,10 +502,6 @@ setupProcfile() {
 
 case "${TOOL}" in
     gomodules)
-        echo "bazaar start"
-        ensureBZR "${BazaarVersion}"
-        echo "bazaar end"
-        ensureHG "${MercurialVersion}"
         echo "cd into ${build}"
         cd ${build}
         step "Determining packages to install"
