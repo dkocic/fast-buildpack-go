@@ -152,6 +152,7 @@ ensureBZR() {
     if [ -x "${bzrp}/bin/bzr" ]; then
         step "Using bzr v${bzrv}"
     else
+        echo "tmp: ${tmp} --- ${PWD}"
         rm -rf "${cache}/bzr"
         mkdir -p "${bzrp}"
         step "Installing bzr ${bzrv}"
