@@ -2,7 +2,7 @@
 # bin/detect <build-dir>
 set -e
 
-build=$(cd "$1/" && pwd)
+build=$(cd "$1/cmd/fast-api" && pwd)
 
 if test -f "${build}/go.mod" || #go modules
    test -f "${build}/Gopkg.lock" || #dep
