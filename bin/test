@@ -4,7 +4,7 @@
 set -eo pipefail
 
 mkdir -p "${1}" "${2}"
-build="$(cd ${1}/ && pwd)"
+build="$(cd ${1}/cmd/fast-api && pwd)"
 env_dir="$(cd ${2}/ && pwd)"
 testpack=$(cd "$(dirname $0)/.." && pwd)
 buildpack="${testpack}"
